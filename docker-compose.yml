@@ -1,0 +1,49 @@
+version: "3.8"
+
+services: 
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - nginx_data:/var/log/nginx/
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - lemp
+
+  php:
+    build:
+      context: './docker/php'
+    container_name: php
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes: 
+      - ./src:/var/www
+      - ./docker/php/php.ini:/usr/local/etc/php.ini-development
+    networks:
+      - lemp
+  
+  postgres:
+    image: postgres:14.1
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - lemp
+
+volumes:
+  nginx_data: {}
+  db_data: {}
+
+networks:
+  lemp:
+    driver: bridge

@@ -1,0 +1,19 @@
+2022/01/22 15:35:22 [error] 7#7: *8 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /efef.php HTTP/1.1", upstream: "fastcgi://192.168.160.3:9000", host: "localhost"
+2022/01/22 15:41:36 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:37 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:37 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:38 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:40 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:42 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:45 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:41:52 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:42:06 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:42:32 [emerg] 1#1: invalid return code "$uri" in /etc/nginx/nginx.conf:20
+2022/01/22 15:47:03 [error] 7#7: *1 directory index of "/var/www/public/" is forbidden, client: 192.168.160.1, server: nginx, request: "GET / HTTP/1.1", host: "localhost"
+2022/01/22 15:47:29 [error] 7#7: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /index2.php HTTP/1.1", upstream: "fastcgi://192.168.160.2:9000", host: "localhost"
+2022/01/22 15:47:35 [error] 7#7: *1 directory index of "/var/www/public/" is forbidden, client: 192.168.160.1, server: nginx, request: "GET / HTTP/1.1", host: "localhost"
+2022/01/22 15:50:12 [error] 7#7: *6 directory index of "/var/www/public/" is forbidden, client: 192.168.160.1, server: nginx, request: "GET / HTTP/1.1", host: "localhost"
+2022/01/22 15:50:41 [error] 7#7: *6 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /index2.php HTTP/1.1", upstream: "fastcgi://192.168.160.2:9000", host: "localhost"
+2022/01/22 15:50:45 [error] 7#7: *6 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /index23.php HTTP/1.1", upstream: "fastcgi://192.168.160.2:9000", host: "localhost"
+2022/01/22 15:51:18 [error] 7#7: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /index23.php HTTP/1.1", upstream: "fastcgi://192.168.160.2:9000", host: "localhost"
+2022/01/22 16:12:00 [error] 8#8: *2 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.160.1, server: nginx, request: "GET /.php HTTP/1.1", upstream: "fastcgi://192.168.160.2:9000", host: "localhost"

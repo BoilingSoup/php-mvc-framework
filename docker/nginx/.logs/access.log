@@ -55,3 +55,6 @@
 192.168.160.1 - - [22/Jan/2022:19:19:54 +0000] "GET /posts/index?page=1&view=print HTTP/1.1" 200 16 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
 192.168.160.1 - - [22/Jan/2022:19:22:45 +0000] "GET /posts/index?page=1&view=print HTTP/1.1" 200 371 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
 192.168.160.1 - - [22/Jan/2022:19:29:12 +0000] "GET /posts/index?page=1&view=print HTTP/1.1" 200 371 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+192.168.160.1 - - [22/Jan/2022:19:44:58 +0000] "GET /posts/index?page=1&view=print HTTP/1.1" 200 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+192.168.160.1 - - [22/Jan/2022:19:45:05 +0000] "GET /posts/posts HTTP/1.1" 200 5 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+192.168.160.1 - - [22/Jan/2022:19:45:08 +0000] "GET /posts HTTP/1.1" 200 109 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"

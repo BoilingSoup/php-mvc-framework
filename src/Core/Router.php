@@ -24,11 +24,6 @@ class Router
     $this->routes[$route] = $params;
   }
 
-  public function getRoutes(): array
-  {
-    return $this->routes;
-  }
-
   public function match(string $url): bool
   {
     // check if $url matches any of the regex routes
@@ -48,6 +43,46 @@ class Router
     }
 
     return false;
+  }
+
+  public function dispatch(string $url): void
+  {
+    if ($this->match($url)) {
+      $controller = $this->params['controller'];
+      $controller = $this->convertToStudlyCaps($controller);
+
+      if (class_exists($controller)) {
+        $controllerObject = new $controller();
+
+        $action = $this->params['action'];
+        $action = $this->convertToCamelCase($action);
+
+        if (is_callable([$controllerObject, $action])) {
+          $controllerObject->$action();
+        } else {
+          echo "Method {$action} (in controller {$controller}) not found";
+        }
+      } else {
+        echo "Controller class {$controller} not found";
+      }
+    } else {
+      echo 'No route matched.';
+    }
+  }
+
+  protected function convertToStudlyCaps($string)
+  {
+    return str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+  }
+
+  protected function convertToCamelCase($string)
+  {
+    return lcfirst($this->convertToStudlyCaps($string));
+  }
+
+  public function getRoutes(): array
+  {
+    return $this->routes;
   }
 
   public function getParams(): array

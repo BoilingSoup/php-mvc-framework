@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Core;
+
 class Router
 {
   protected $routes = [];
@@ -50,6 +52,7 @@ class Router
     if ($this->match($url)) {
       $controller = $this->params['controller'];
       $controller = $this->convertToStudlyCaps($controller);
+      $controller = "App\Controllers\\$controller";
 
       if (class_exists($controller)) {
         $controllerObject = new $controller();

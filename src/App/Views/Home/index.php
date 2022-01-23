@@ -9,7 +9,13 @@
 
 <body>
   <h1>Welcome</h1>
-  <p>Hello from the view!</p>
+  <p>Hello <?= htmlspecialchars($name); ?>!</p>
+
+  <ul>
+    <?php foreach ($colors as $color) : ?>
+      <li><?= htmlspecialchars($color); ?></li>
+    <?php endforeach; ?>
+  </ul>
 </body>
 
 </html>

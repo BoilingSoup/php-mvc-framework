@@ -57,7 +57,7 @@ class Router
       $controller = "App\Controllers\\$controller";
 
       if (class_exists($controller)) {
-        $controllerObject = new $controller();
+        $controllerObject = new $controller($this->params);
 
         $action = $this->params['action'];
         $action = $this->convertToCamelCase($action);
@@ -75,7 +75,7 @@ class Router
     }
   }
 
-  protected function removeQueryStringVariables(string $url): string 
+  protected function removeQueryStringVariables(string $url): string
   {
     if ($url == '') {
       return $url;

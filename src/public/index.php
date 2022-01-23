@@ -27,21 +27,6 @@ $router = new Core\Router();
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
-
-/*
-// Display the routing table
-echo '<pre>';
-var_dump($router->getRoutes());
-echo '</pre>';
-
-// Match the requested route
-$url = $_SERVER['QUERY_STRING'];
-
-if ($router->match($url)) {
-  echo '<pre>';
-  var_dump($router->getParams());
-  echo '</pre>';
-}
-*/
+$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 
 $router->dispatch($_SERVER['QUERY_STRING']);

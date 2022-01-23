@@ -49,6 +49,8 @@ class Router
 
   public function dispatch(string $url): void
   {
+    $url = $this->removeQueryStringVariables($url);
+
     if ($this->match($url)) {
       $controller = $this->params['controller'];
       $controller = $this->convertToStudlyCaps($controller);
@@ -73,14 +75,29 @@ class Router
     }
   }
 
-  protected function convertToStudlyCaps($string)
+  protected function removeQueryStringVariables(string $url): string 
   {
-    return str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+    if ($url == '') {
+      return $url;
+    }
+
+    $parts = explode('&', $url, 2);
+
+    if (strpos($parts[0], '=') === false) {
+      return $parts[0];
+    } else {
+      return '';
+    }
   }
 
-  protected function convertToCamelCase($string)
+  protected function convertToStudlyCaps(string $action): string
   {
-    return lcfirst($this->convertToStudlyCaps($string));
+    return str_replace(' ', '', ucwords(str_replace('-', ' ', $action)));
+  }
+
+  protected function convertToCamelCase(string  $action): string
+  {
+    return lcfirst($this->convertToStudlyCaps($action));
   }
 
   public function getRoutes(): array

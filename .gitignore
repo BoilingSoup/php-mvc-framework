@@ -1,3 +1,4 @@
 **/docker/**/error.log
 **/docker/**/access.log
+**/src/vendor/
 

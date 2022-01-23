@@ -21,7 +21,11 @@ class Home extends \Core\Controller
 
   public function indexAction(): void
   {
-    View::render('Home/index.php', [
+    // View::render('Home/index.php', [
+    //   'name' => 'BoilingSoup',
+    //   'colors' => ['red', 'green', 'blue']
+    // ]);
+    View::renderTemplate('Home/index.html', [
       'name' => 'BoilingSoup',
       'colors' => ['red', 'green', 'blue']
     ]);

@@ -41,6 +41,14 @@ services:
     networks:
       - lemp
 
+  composer:
+    image: composer:2.2.4
+    container_name: composer
+    volumes:
+      - ./src/:/app
+    networks:
+      - lemp
+
 volumes:
   db_data: {}
 

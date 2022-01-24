@@ -4,17 +4,12 @@ namespace App\Models;
 
 use PDO;
 
-class Post
+class Post extends \Core\Model
 {
   public static function getAll(): array
   {
-    $host = 'postgres';
-    $dbname = 'mvc';
-    $username = 'postgres';
-    $password = 'password';
-
     try {
-      $db = new PDO("pgsql:host={$host};dbname={$dbname}", $username, $password);
+      $db = static::getDB();
 
       $stmt = $db->query('SELECT Id, title, content FROM posts ORDER BY created_at');
 

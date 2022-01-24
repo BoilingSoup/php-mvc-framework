@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use \Core\View;
+use App\Models\Post;
 
 class Posts extends \Core\Controller
 {
   public function indexAction(): void
   {
-    // echo "Hello from the index action in the Posts controller!";
-    View::renderTemplate('Posts/index.html');
+    $posts = Post::getAll();
+
+    View::renderTemplate('Posts/index.html', [
+      'posts' => $posts
+    ]);
   }
 
   public function addNewAction(): void

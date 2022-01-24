@@ -17,7 +17,7 @@ abstract class Controller
     $method = $name . 'Action';
 
     if (!method_exists($this, $method)) {
-      echo "Method {$method} not found in controller " . get_class($this);
+      throw new \Exception("Method $method not found in controller " . get_class($this));
     }
 
     if ($this->before() !== false) {

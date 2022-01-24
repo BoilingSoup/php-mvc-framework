@@ -7,7 +7,7 @@ use Dotenv\Dotenv;
 
 abstract class Model
 {
-  protected static function getDB()
+  protected static function getDB(): PDO
   {
     static $db = null;
 
@@ -22,6 +22,7 @@ abstract class Model
 
       try {
         $db = new PDO("pgsql:host={$host};dbname={$dbname}", $username, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (\PDOException $e) {
         echo $e->getMessage();
       }

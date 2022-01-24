@@ -1,4 +1,5 @@
 **/docker/**/error.log
 **/docker/**/access.log
+**/docker/**/php_errors.log
 **/src/vendor/
 

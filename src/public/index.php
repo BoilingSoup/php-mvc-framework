@@ -22,6 +22,15 @@ set_exception_handler('Core\Error::exceptionHandler');
  */
 $router = new Core\Router();
 
+/**
+ * Load .env variables
+ */
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
+// parse SHOW_ERRORS env variable to boolean
+if (strtolower((string) $_ENV["SHOW_ERRORS"]) === "true") $_ENV["SHOW_ERRORS"] = true;
+if (strtolower((string) $_ENV["SHOW_ERRORS"]) === "false") $_ENV["SHOW_ERRORS"] = false;
+
 // Add the routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');

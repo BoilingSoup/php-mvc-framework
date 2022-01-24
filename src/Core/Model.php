@@ -3,16 +3,12 @@
 namespace Core;
 
 use PDO;
-use Dotenv\Dotenv;
 
 abstract class Model
 {
   protected static function getDB(): PDO
   {
     static $db = null;
-
-    $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-    $dotenv->load();
 
     if ($db === null) {
       $host = $_ENV['HOST'];

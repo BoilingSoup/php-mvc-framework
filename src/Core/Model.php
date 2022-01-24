@@ -3,6 +3,7 @@
 namespace Core;
 
 use PDO;
+use Dotenv\Dotenv;
 
 abstract class Model
 {
@@ -10,11 +11,14 @@ abstract class Model
   {
     static $db = null;
 
+    $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();
+
     if ($db === null) {
-      $host = 'postgres';
-      $dbname = 'mvc';
-      $username = 'postgres';
-      $password = 'password';
+      $host = $_ENV['HOST'];
+      $dbname = $_ENV['DBNAME'];
+      $username = $_ENV['USERNAME'];
+      $password = $_ENV['PASSWORD'];
 
       try {
         $db = new PDO("pgsql:host={$host};dbname={$dbname}", $username, $password);

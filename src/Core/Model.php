@@ -18,11 +18,10 @@ abstract class Model
 
       try {
         $db = new PDO("pgsql:host={$host};dbname={$dbname}", $username, $password);
-
-        return $db;
       } catch (\PDOException $e) {
         echo $e->getMessage();
       }
     }
+    return $db;
   }
 }

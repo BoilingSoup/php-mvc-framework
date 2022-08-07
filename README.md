@@ -1,6 +1,6 @@
 # php-mvc-framework
 
-This is an MVC framework I made with vanilla PHP to learn how popular MVC frameworks work.
+This is a minimal MVC framework I made with vanilla PHP to get a better understanding of how popular MVC frameworks work.
 
 Some features include:
 - Twig templating for views
